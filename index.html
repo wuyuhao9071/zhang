@@ -2,12 +2,26 @@
 <html>
 <head>
     <title>只因你太美</title>
+    
+    <style>
+        .my-button {
+            background-color: #4CAF50; /* 设置背景颜色 */
+            border: none; /* 去除边框 */
+            color: white; /* 设置文字颜色 */
+            padding: 10px 20px; /* 设置内边距 */
+            text-align: center; /* 文字居中对齐 */
+            display: inline-block; /* 元素以行内块显示，使按钮水平排列 */
+            font-size: 20px; /* 设置文字大小 */
+            cursor: pointer; /* 添加指针样式 */
+            border-radius: 5px; /* 添加圆角 */
+        }
+    </style>
 </head>
 <body>
-    <h1>by wuyuhao</h1>
+    <h1>Choose one</h1>
     
-    <button onclick="showImage()">beautiful picture</button>
-    <button onclick="showVideo()">yello movie</button>
+    <button class="my-button" onclick="showImage()">Beautiful picture</button>
+    <button class="my-button" onclick="showVideo()">Yellow movie</button>
     
     <script>
         function showImage() {
@@ -18,5 +32,6 @@
             window.location.href = "v.mp4";
         }
     </script>
+    <h6>by Wuyuhao</h6>
 </body>
 </html>
