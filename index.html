@@ -25,19 +25,51 @@
             color: #666;
             margin: 0;
         }
-        .sponsor img {
-            width: 111px;
-            height: 152px;
-        }
+        img {
+  width: 111px; /* 设置宽度为111像素 */
+  height: 152px; /* 设置高度为152像素 */
+}
 
     </style>
+    <script>
+      function updateTime() {
+        var targetDate = new Date("September 1, 1939 04:45:00");
+        var currentDate = new Date();
+        var timeDiff = currentDate.getTime() - targetDate.getTime();
+
+        // 计算时间差，单位为毫秒
+        var seconds = Math.floor(timeDiff / 1000);
+        var minutes = Math.floor(seconds / 60);
+        var hours = Math.floor(minutes / 60);
+        var days = Math.floor(hours / 24);
+
+        seconds %= 60;
+        minutes %= 60;
+        hours %= 24;
+
+        // 将时间差显示在页面上
+        document.getElementById("days").textContent = days;
+        document.getElementById("hours").textContent = hours;
+        document.getElementById("minutes").textContent = minutes;
+        document.getElementById("seconds").textContent = seconds;
+
+        setTimeout(updateTime, 1000); // 每秒更新一次时间
+      }
+    </script>
 </head>
-<body>
+<body onload="updateTime()">
     <h1>选一个</h1>
     
     <button class="my-button" onclick="showImage()">好康的图片</button>
     <button class="my-button" onclick="showVideo()">你懂的～</button>
-    
+        <h1>距离1939年9月1日4:45的时间：</h1>
+
+    <p>
+      <span id="days"></span> 天
+      <span id="hours"></span> 小时
+      <span id="minutes"></span> 分钟
+      <span id="seconds"></span> 秒
+    </p>
     <script>
         function showImage() {
             window.location.href = "i.jpg";
@@ -49,10 +81,7 @@
     </script>
     <h6>Wuyuhao制作</h6>
     <p>赞助：</p>
-    <img src="money.png" alt="赞助二维码">
-    <div class="sponsor">
-        <h3>李东炎</h3>
-        <p>捐赠1.00大洋</p>
-    </div>
+    <img src="money.jpg">
+    <h3>赞助名单稍后在此显示</h3>
 </body>
 </html>
